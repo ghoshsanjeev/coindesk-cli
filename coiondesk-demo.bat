@@ -3,5 +3,6 @@
 @REM docker image rm -f coindesk-demo
 @REM docker build -t coindesk-demo .
 
-docker run -it coindesk-demo
+docker pull coldfusion/coindesk-demo:0.1
+docker run -it coldfusion/coindesk-demo:0.1
 @REM docker run -e "SPRING_PROFILES_ACTIVE=dev" -it coindesk-demo
