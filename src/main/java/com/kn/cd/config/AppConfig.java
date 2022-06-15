@@ -1,6 +1,7 @@
 package com.kn.cd.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,12 +18,15 @@ public class AppConfig {
     @Autowired
     private RestTemplateResponseErrorHandler errorHandler;
 
+    @Value("${app.rest.connection.timeout:3000}")
+    private Integer connectionTimeout;
+
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
 
         RestTemplate restTemplate = builder
-                .setConnectTimeout(Duration.ofMillis(3000))
-                .setReadTimeout(Duration.ofMillis(3000))
+                .setConnectTimeout(Duration.ofMillis(connectionTimeout))
+                .setReadTimeout(Duration.ofMillis(connectionTimeout))
                 .build();
         restTemplate.getMessageConverters().add(javaScriptMessageConverter);
         restTemplate.setErrorHandler(errorHandler);
