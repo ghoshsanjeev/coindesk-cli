@@ -1,4 +1,4 @@
-package com.kn.cd.exception;
+package com.kn.cd.service.cd;
 
 public class CoindeskException extends Exception  {
     public CoindeskException(String message) {

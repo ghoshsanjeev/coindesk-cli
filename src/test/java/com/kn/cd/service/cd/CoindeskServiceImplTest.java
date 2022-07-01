@@ -1,6 +1,5 @@
 package com.kn.cd.service.cd;
 
-import com.kn.cd.exception.CoindeskException;
 import com.kn.cd.model.BitCoinPriceIndex;
 import com.kn.cd.model.CurrentPrice;
 import com.kn.cd.service.bpi.BPIService;

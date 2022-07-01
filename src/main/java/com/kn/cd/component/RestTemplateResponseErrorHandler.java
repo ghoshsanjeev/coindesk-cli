@@ -1,4 +1,4 @@
-package com.kn.cd.config;
+package com.kn.cd.component;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.client.ClientHttpResponse;

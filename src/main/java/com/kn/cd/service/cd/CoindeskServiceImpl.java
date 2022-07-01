@@ -1,6 +1,5 @@
 package com.kn.cd.service.cd;
 
-import com.kn.cd.exception.CoindeskException;
 import com.kn.cd.model.BitCoinPriceIndex;
 import com.kn.cd.model.CurrentPrice;
 import com.kn.cd.model.HistoricalPrice;
@@ -58,7 +57,6 @@ public class CoindeskServiceImpl implements CoindeskService {
         BitCoinPriceIndex bpi = getCurrentBPIForCurrencyCode(currency);
         System.out.printf("Current BitCoin Rate in [%s]= %s%n", currency.toUpperCase(), bpi.getRate());
     }
-
 
     private void printHistoricalPriceForCurrencyCode(String currency) throws CoindeskException {
 
