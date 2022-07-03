@@ -1,4 +1,4 @@
-package com.kn.cd.service;
+package com.kn.cd.component;
 
 import com.kn.cd.service.cd.CoindeskService;
 import lombok.extern.slf4j.Slf4j;
@@ -30,6 +30,6 @@ public class CoindeskCLIRunner implements CommandLineRunner {
             currency = scanner.next();
             scanner.close();
         }
-        coindeskService.run(currency);
+        coindeskService.start(currency);
     }
 }

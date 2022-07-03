@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.Map;
 
 public interface CoindeskService {
-    void run(String currency);
+    void start(String currency);
     BitCoinPriceIndex getCurrentBPIForCurrencyCode(String currency) throws CoindeskException;
     Map<String, BigDecimal> getHistoricalBPIMapForCurrencyCode(String currency) throws CoindeskException;
 }

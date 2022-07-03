@@ -1,9 +1,12 @@
-package com.kn.cd.service.cd;
+package com.kn.cd.service.cd.old;
 
 import com.kn.cd.model.BitCoinPriceIndex;
 import com.kn.cd.model.CurrentPrice;
 import com.kn.cd.service.bpi.BPIService;
+import com.kn.cd.service.cd.CoindeskException;
+import com.kn.cd.service.cd.CoindeskServiceImpl;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,6 +21,7 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
 
+@Disabled
 @ExtendWith(SpringExtension.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class CoindeskServiceImplTest {
@@ -32,6 +36,7 @@ class CoindeskServiceImplTest {
         coindeskService = new CoindeskServiceImpl(bpiService);
     }
 
+    @Disabled
     @Test
     void getCurrentBPI() throws CoindeskException {
         CurrentPrice currentPrice = new CurrentPrice();

@@ -30,7 +30,7 @@ public class CoindeskServiceImpl implements CoindeskService {
     private String COINDESK_ERROR_MESSAGE;
 
     @Override
-    public void run(String currency) {
+    public void start(String currency) {
         log.debug("Selected currency: " + currency);
         try {
             printCurrentPriceForCurrencyCode(currency);
