@@ -1,9 +1,11 @@
-package com.kn.cd.service;
+package com.kn.cd.component;
 
+import com.kn.cd.service.cd.CoindeskException;
 import com.kn.cd.service.cd.CoindeskService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
@@ -30,6 +32,11 @@ public class CoindeskCLIRunner implements CommandLineRunner {
             currency = scanner.next();
             scanner.close();
         }
-        coindeskService.run(currency);
+        try {
+            coindeskService.getPriceStat(currency, true);
+        } catch (CoindeskException ex) {
+            log.error(ex.getMessage());
+            System.err.println(ex.getMessage());
+        }
     }
 }

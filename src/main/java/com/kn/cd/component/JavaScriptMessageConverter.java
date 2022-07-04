@@ -6,6 +6,14 @@ import org.springframework.http.converter.json.AbstractJackson2HttpMessageConver
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.stereotype.Component;
 
+/**
+ * When receiving a new request, Spring will use the “Accept” header to determine the media type that it needs to respond with.
+ *
+ * It will then try to find a registered converter that's capable of handling that specific media type.
+ * Finally, it will use this to convert the entity and send back the response.
+ *
+ * @Usage: The bean is used to be added to the message converters of the restTemplate bean, declared in the AppConfig class
+ */
 @Component
 public class JavaScriptMessageConverter extends AbstractJackson2HttpMessageConverter {
 

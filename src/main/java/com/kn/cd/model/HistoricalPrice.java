@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Map;
 
 @Getter
@@ -13,5 +15,6 @@ import java.util.Map;
 @ToString(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HistoricalPrice extends BitCoinPrice {
-    Map<String, BigDecimal> bpi;
+    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    Map<LocalDate, BigDecimal> bpi;
 }
